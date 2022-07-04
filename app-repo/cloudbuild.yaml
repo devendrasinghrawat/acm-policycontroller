@@ -25,7 +25,7 @@ steps:
   # and consolidates every resource in a single file.
   name: 'gcr.io/kpt-dev/kpt'
   entrypoint: '/bin/sh'
-  args: ['-c', 'kpt pkg get https://github.com/devendrasinghrawat/acm-policycontroller.git/acm-repo/cluster@main constraints
+  args: ['-c', 'kpt pkg get https://devendrasinghrawat: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@github.com/devendrasinghrawat/acm-policycontroller.git/acm-repo/cluster@main constraints
                   && kpt fn source constraints/ hydrated-manifests/ > hydrated-manifests/kpt-manifests.yaml']
 - id: 'Validate against policies'
   # This step validates that all resources comply with all policies.
