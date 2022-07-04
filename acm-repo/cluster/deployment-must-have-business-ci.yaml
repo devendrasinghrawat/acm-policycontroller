@@ -23,6 +23,6 @@ spec:
         kinds: ["Deployment"]
   parameters:
     labels:
-      - key: "owner"
-    message: "Deployment objects should have an 'owner' label indicating who created them."
-# [END anthosconfig_ci_app_deployment_must_have_owner]
+      - key: "business-ci"
+    message: "Deployment objects should have an 'business-ci' label indicating Business CI in ITSM system."
+# [END]
