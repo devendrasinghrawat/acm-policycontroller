@@ -11,11 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# [START anthosconfig_ci_app_deployment_must_have_owner]
+# [START anthosconfig_ci_app_deployment_must_have_business-ci]
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabels
 metadata:
-  name: deployment-must-have-owner
+  name: deployment-must-have-business-ci
 spec:
   match:
     kinds:
