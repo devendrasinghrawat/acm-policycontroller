@@ -10,8 +10,8 @@ steps:
   - 'CLOUDSDK_COMPUTE_REGION=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-6'
 #Sleep
-steps:
 - name: 'bash'
+  id: Wait-for-voilations
   args: ['sleep', '30']
 #Get Voilations
 - name: 'gcr.io/cloud-builders/kubectl'
