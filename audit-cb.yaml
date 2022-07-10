@@ -1,0 +1,25 @@
+steps:
+#Apply policies
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Deploy-policy
+  args:  
+  - 'apply'
+  - '-f'
+  - 'acm-repo/system/volume-psp.yaml'
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-6'
+#Sleep
+steps:
+- name: 'bash'
+  args: ['sleep', '30']
+#Get Voilations
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Get Violations
+  args:  
+  - 'describe'
+  - 'k8spspvolumetypes.constraints.gatekeeper.sh'
+  - 'psp-volume-types'
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-6'
